@@ -16,7 +16,7 @@ func relaunching() {
 	err = cmd.Wait()
 }
 
-func restart(w http.ResponseWriter, r *http.Request) {
+func restart(w http.ResponseWriter, _ *http.Request) {
 	io.WriteString(w, "<h1>deploy server: restarting webserver...</h1>")
 	relaunching()
 	io.WriteString(w, "<h1>deploy server: webserver restarted!</h1>")
