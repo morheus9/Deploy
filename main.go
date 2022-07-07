@@ -14,4 +14,4 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-// env GOOS=linux GOARCH=amd64 go build -o webserver
+// env GOOS=linux GOARCH=amd64 go build -o webserver1 main.go

@@ -27,4 +27,4 @@ func main() {
 	http.ListenAndServe(":5000", nil)
 }
 
-// env GOOS=linux GOARCH=amd64 go build
+//  env GOOS=linux GOARCH=amd64 go build  -o deploy deploy.go
