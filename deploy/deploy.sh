@@ -1,10 +1,6 @@
 #! /bin/sh
 
-cd ~/www/devops
-git pull git@gitlab.com:gEdisonLeun/devops.git
-./webserver &
-
-# sudo chmod 666 /var/run/docker.sock  -- if dont login
+# sudo chmod 666 /var/run/docker.sock  -- if don't login
 docker login -u morheus -p morheus1917
 docker pull morheus/go_app
 docker container rm -f go_app_latest || true
