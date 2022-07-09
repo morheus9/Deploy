@@ -11,5 +11,5 @@ CI_REGISTRY_USER - must contain your Docker HUB username.
 
 4. Add webhooks on your gitlab with "adress_your_server:5000"
 
-5. Go to addres on your server "127.0.0.1:5000" and you start service of deploy, app will 
-listen this adress and start deploy.sh 
+5. Go to addres on your server "127.0.0.1:5000" and you start service of deploy, app will listen this
+adress and start deploy.sh 
