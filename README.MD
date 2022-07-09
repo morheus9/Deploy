@@ -13,11 +13,11 @@
 
 ## 4. For deploy do one of two:
 
-### - Add webhooks on your gitlab with "adress_your_server:5000" without ssl verification. (automatic deployment)
+- Add webhooks on your gitlab with "adress_your_server:5000" without ssl verification. (automatic deployment)
 
 or
 
-### - Go to address on your server "127.0.0.1:5000" and you start process of deploy, it will listen this
+- Go to address on your server "127.0.0.1:5000" and you start process of deploy, it will listen this
 ### address and start deploy.sh. (semi-automatic deployment)
 
 ## 5. Done!
