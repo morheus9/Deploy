@@ -12,7 +12,7 @@ publish:
   image: docker:latest
   stage: publish
   tags:
-    - deployment
+    - docker
   services:
     - docker:dind
   script:
