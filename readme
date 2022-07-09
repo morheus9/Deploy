@@ -5,11 +5,13 @@ CI_REGISTRY_IMAGE - must contain index.docker.io/username/image_name.
 CI_REGISTRY_PASSWORD - must contain your Docker HUB password or your access token.
 CI_REGISTRY_USER - must contain your Docker HUB username.
 
-2. Copy all project folders to the target machine.
+2. Create folder ~/www/devops and add add deploy files there.
+ 
+3. Copy all project folders to the target machine.
 
-3. Start "deploy" binary (deploy app works on 5000 port) and your app's dockerfile.
+4. Start "deploy" binary (deploy app works on 5000 port) and your app's dockerfile.
 
-4. Add webhooks on your gitlab with "adress_your_server:5000"
+5. Add webhooks on your gitlab with "adress_your_server:5000"
 
-5. Go to addres on your server "127.0.0.1:5000" and you start service of deploy, app will listen this
+6. Go to addres on your server "127.0.0.1:5000" and you start service of deploy, app will listen this
 adress and start deploy.sh 
