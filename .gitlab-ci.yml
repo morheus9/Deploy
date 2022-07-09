@@ -1,24 +1,39 @@
-stages:
-  - publish
-  - deploy
-
-  
-variables:
-  GO_IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/go:$CI_COMMIT_SHORT_SHA 
-  GO_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/go_latest
-
-  
-publish:
+#### TO DOCKER HUB
+docker-build-master:
   image: docker:latest
-  stage: publish
-  tags:
-    - docker
+  stage: build
   services:
     - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-  #GO_app
-    - docker build -t $GO_LATEST -t $GO_IMAGE .
-    - docker push $GO_LATEST
-    - docker push $GO_IMAGE
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
+  only:
+    - master
+
+
+#### TO CONTAINER REGISTRY GITLAB 
+# stages:
+#  - publish
+#  - deploy
+  
+#variables:
+#  GO_IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/go:$CI_COMMIT_SHORT_SHA 
+#  GO_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/go_latest
+
+  
+#publish:
+#  image: docker:latest
+#  stage: publish
+#  tags:
+#    - docker
+#  services:
+#    - docker:dind
+#  script:
+#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#  #GO_app
+#    - docker build -t $GO_LATEST -t $GO_IMAGE .
+#    - docker push $GO_LATEST
+#    - docker push $GO_IMAGE
 
