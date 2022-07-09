@@ -13,7 +13,7 @@ docker-build-master:
     - master
 
 
-#### TO CONTAINER REGISTRY GITLAB 
+#### TO CONTAINER REGISTRY IN GITLAB 
 # stages:
 #  - publish
 #  - deploy
