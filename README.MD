@@ -18,6 +18,6 @@
 or
 
 ### - Go to address on your server "127.0.0.1:5000" and you start process of deploy, it will listen this
-address and start deploy.sh. (semi-automatic deployment)
+### address and start deploy.sh. (semi-automatic deployment)
 
 ## 5. Done!
