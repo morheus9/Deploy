@@ -1,0 +1,24 @@
+stages:
+  - publish
+  - deploy
+
+  
+variables:
+  GO_IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/GO:$CI_COMMIT_SHORT_SHA 
+  GO_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/GO_latest
+
+  
+publish:
+  image: docker:latest
+  stage: publish
+  tags:
+    - deployment
+  services:
+    - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+  #GO_app
+    - docker build -t $GO_LATEST -t $GO_IMAGE .
+    - docker push $GO_LATEST
+    - docker push $GO_IMAGE
+
