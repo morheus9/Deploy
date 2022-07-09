@@ -19,7 +19,7 @@ func relaunching() {
 func restart(w http.ResponseWriter, _ *http.Request) {
 	io.WriteString(w, "<h1>Deploy server: Pushing and restarting...please wait...</h1>")
 	relaunching()
-	io.WriteString(w, "<h1>Deploy server: Aplication successfully updated from github and works!</h1>")
+	defer io.WriteString(w, "<h1>Deploy server: Aplication successfully updated from github and works!</h1>")
 }
 
 func main() {
