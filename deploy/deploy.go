@@ -25,7 +25,7 @@ func relaunching() {
 func restart(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "<h1>Deploy server: Pushing and restarting...please wait...</h1>")
 	relaunching()
-	http.Redirect(w, r, "127.0.0.1:5000/done!", 301)
+	http.Redirect(w, r, "/done!", 303)
 }
 
 func redirect(w http.ResponseWriter, r *http.Request) {
